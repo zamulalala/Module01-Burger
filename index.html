@@ -5,25 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Burger</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com"> 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;700;800;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/main.css">
-</head>
+    </head>
 <body>
-    <header>
+    <header id="headerTop">
         <div class="container">
             <div class="header">
-                <a href="#" class="header-logo"></a>
-                <nav>
-                    <ul class="header-nav">
-                        <li><a href="#" class="active">Главная</a></li>
-                        <li><a href="#">Меню</a></li>
-                        <li><a href="#">О нас</a></li>
-                        <li><a href="#">Контакты</a></li>
-                    </ul>
-                </nav>
+                <div class="header-burger">
+                    <button class="burger" onclick="openModal()"></button>
+                </div>
+                <div class="header-item">
+                    <a href="index.html" class="header-logo"></a>
+                    <nav>
+                        <ul class="header-nav">
+                            <li><a href="index.html" class="active">Главная</a></li>
+                            <li><a href="menu.html">Меню</a></li>
+                            <li><a href="#">О нас</a></li>
+                            <li><a href="#">Контакты</a></li>
+                        </ul>
+                    </nav>
+                </div>
                 <button type="button" class="button">
                     <span class="button-item">
                         <img src="img/cart.svg" alt="Корзина">
@@ -34,15 +38,92 @@
             </div>
         </div>
     </header>
-    <div class="bg">
-        <div class="container">
-            <ul class="breadcrumbs">
-                <li><a href="#">Главная</a></li>
-                <li><a href="#">Меню</a></li>
-            </ul>
-            <h1 class="title">Наше Меню</h1>
-            <p class="description">Выбирай из предложенного ассортимента и мы доставим блюдо в течении часа</p>
+    <div class="main">
+        <div class="wrapper">
+            <div class="content">
+                <h1 class="content-title">
+                    <span>работаем с 11:00 до 22:00</span>
+                    Лучшие бургеры
+                </h1>
+                <p class="content-text">Закажи наши фирменные бурегры или собери что-то своё, а&nbsp;наши курьеры доставят за 30 минут</p>
+                <a href="menu.html" class="content-link">заказать</a>
+            </div>
+            <div class="visual">
+                <div class="visual-bg"></div>
+                <img src="img/burger1.png" alt="Burger">
+            </div>
         </div>
     </div>
+    <div class="promo">
+        <div class="wrapper">
+            <div class="promo-left">
+                <p class="sale">Скидка</p>
+                <p class="cost">-20%</p>
+                <p class="promo-description">При заказе на 3х и более персон мы делаем скидки, а также предоставляем скидки именинникам</p>
+            </div>
+            <div class="promo-right">
+                <p class="free">Бесплатно</p>
+                <p class="promo-description">При заказе на сумму 500 рублей и более - доставляем бесплатно</p>
+                <a href="menu.html">заказать</a>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-box">
+                <div class="footer-item">
+                    <img class="footer-logo" src="img/Icon.svg" alt="Logo">
+                </div>
+                <div class="footer-item">
+                    <h2>Основные ссылки</h2>
+                    <ul class="footer-list">
+                        <li><a href="#">Меню</a></li>
+                        <li><a href="#">Заказ и Доставка</a></li>
+                        <li><a href="#">Методы оплаты</a></li>
+                        <li><a href="#">Контакты</a></li> 
+                    </ul>
+                    <ul class="footer-list footer-list-tel">
+                        <li>
+                            <a href="tel:+79007871313">+ 7 900 787 13-13</a>
+                        </li>
+                        <li><a href="tel:+79007001414">+ 7 900 700 14-14</a></li>
+                    </ul>
+                </div>
+                <div class="footer-item">
+                    <h2>Основная информация</h2>
+                    <ul class="footer-list">
+                        <li>
+                            <span>Время</span>
+                            ПН - ВС <br>
+                            11:00 - 22:00 без перерывов
+                        </li>
+                        <li>
+                            <span>Адрес</span>
+                            Москва, ул. Тверская, 5, вход со двора
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-tel">
+                    <ul class="footer-list footer-list-tel">
+                        <li>
+                            <a href="tel:+79007871313">+ 7 900 787 13-13</a>
+                        </li>
+                        <li><a href="tel:+79007001414">+ 7 900 700 14-14</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <a href="#headerTop" class="button-up hidden" id="btnUp">Наверх</a>
+    <div class="modal" id="modal">
+        <ul class="header-nav">
+            <li><a href="index.html" class="active">Главная</a></li>
+            <li><a href="menu.html">Меню</a></li>
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Контакты</a></li>
+        </ul>
+        <button class="burger-close" onclick="closeModal()"></button>
+    </div>
+    <script src="scripts/main.js"></script>
 </body>
 </html>
